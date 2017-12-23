@@ -1,0 +1,30 @@
+version: "2"
+services:
+  mariadb:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    # volumes:
+    #   - "./mariadb/config:/etc/mysql/conf.d"
+    #   - "./mariadb/data:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=r00tP@sSw0rd
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    # volumes:
+    #   - "./postgres/config:/etc/postgresql"
+    #   - "./postgres/data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_PASSWORD=r00tP@sSw0rd
+  sqlserver:
+    image: microsoft/mssql-server-linux:2017-latest
+    ports:
+      - "1433:1433"
+    # volumes:
+    #   - "./sqlserver/config:/opt/mssql/lib/mssql-conf"
+    #   - "./sqlserver/data:/var/opt/mssql"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=r00tP@sSw0rd
