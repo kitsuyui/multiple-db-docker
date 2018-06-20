@@ -1,7 +1,7 @@
 version: "2"
 services:
   mariadb:
-    image: mariadb
+    image: mariadb:latest@sha256:4d7507741314f041d9c86dbc0c35ceaf3d25c3833e3d7899a8a3fcd03670f368
     ports:
       - "3306:3306"
     # volumes:
@@ -10,7 +10,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=r00tP@sSw0rd
   postgres:
-    image: postgres
+    image: postgres:latest@sha256:e033c99282a81622b1eed36b735034e10d633a34cca3387f6142381770cfbcc8
     ports:
       - "5432:5432"
     # volumes:
@@ -19,7 +19,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=r00tP@sSw0rd
   sqlserver:
-    image: microsoft/mssql-server-linux:2017-latest
+    image: microsoft/mssql-server-linux:2017-latest@sha256:09a9386e0484667b0490069bc854dcd72c2e1a85d342d1d798aced91f5e1aa81
     ports:
       - "1433:1433"
     # volumes:
