@@ -36,3 +36,16 @@ services:
       - MSSQL_SA_PASSWORD=r00tP@sSw0rd
     healthcheck:
       test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-U", "sa", "-P", "r00tP@sSw0rd", "-Q", "SELECT CAST(1 AS BIT) AS health"]
+
+  mongo:
+    image: mongo:4.1.10-bionic
+    ports:
+      - "27017:27017"
+    # volumes:
+    #   - "./mongo/config:/etc/mongo"
+    #   - "./mongo/data:/data/db"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=r00tP@sSw0rd
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "quit()"]
