@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+            name: docker-compose up
+            command: |
+              set -eu
+              docker-compose up -d
